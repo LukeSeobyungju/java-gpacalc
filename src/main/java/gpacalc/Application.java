@@ -11,47 +11,42 @@ public class Application {
         String[] line=new String[2];
         String[][] parts=new String[2][];
         boolean flag=true;
-//        try{
-            System.out.println("전공 과목명과 이수학점, 평점을 입력해주세요(예시: 프로그래밍언어론-3-A+,소프트웨어공학-3-B+):");
-            line[0]=Console.readLine();
-            parts[0]=line[0].split(",");
-            System.out.println("교양 과목명과 이수학점, 평점을 입력해주세요(예시: 선형대수학-3-C0,인간관계와자기성장-3-P):");
-            line[1]=Console.readLine();
-            parts[1]=line[1].split(",");
-            for(String part:parts[0]) {
-                String[] subject = part.split("-");
-                if (!subject[1].equals("1") && !subject[1].equals("2") && !subject[1].equals("3") && !subject[1].equals("4")) {
-                    flag=false;
-                    throw new IllegalArgumentException();
-                }
-                if (subject[0].length() > 10 || subject[0].replaceAll(" ", "").isEmpty()) {
-                    flag=false;
-                    throw new IllegalArgumentException();
-                }
-                if (!subject[2].equals("A+") && !subject[2].equals("A0") && !subject[2].equals("B+") && !subject[2].equals("B0") && !subject[2].equals("C+") && !subject[2].equals("C0") && !subject[2].equals("D+") && !subject[2].equals("D0") && !subject[2].equals("F") && !subject[2].equals("P") && !subject[2].equals("NP")) {
-                    flag=false;
-                    throw new IllegalArgumentException();
-                }
+        System.out.println("전공 과목명과 이수학점, 평점을 입력해주세요(예시: 프로그래밍언어론-3-A+,소프트웨어공학-3-B+):");
+        line[0]=Console.readLine();
+        parts[0]=line[0].split(",");
+        System.out.println("교양 과목명과 이수학점, 평점을 입력해주세요(예시: 선형대수학-3-C0,인간관계와자기성장-3-P):");
+        line[1]=Console.readLine();
+        parts[1]=line[1].split(",");
+        for(String part:parts[0]) {
+            String[] subject = part.split("-");
+            if (!subject[1].equals("1") && !subject[1].equals("2") && !subject[1].equals("3") && !subject[1].equals("4")) {
+                flag=false;
+                throw new IllegalArgumentException();
             }
-            for(String part:parts[1]) {
-                String[] subject = part.split("-");
-                if (!subject[1].equals("1") && !subject[1].equals("2") && !subject[1].equals("3") && !subject[1].equals("4")) {
-                    flag=false;
-                    throw new IllegalArgumentException();
-                }
-                if (subject[0].length() > 10 || subject[0].replaceAll(" ", "").isEmpty()) {
-                    flag=false;
-                    throw new IllegalArgumentException();
-                }
-                if (!subject[2].equals("A+") && !subject[2].equals("A0") && !subject[2].equals("B+") && !subject[2].equals("B0") && !subject[2].equals("C+") && !subject[2].equals("C0") && !subject[2].equals("D+") && !subject[2].equals("D0") && !subject[2].equals("F") && !subject[2].equals("P") && !subject[2].equals("NP")) {
-                    flag=false;
-                    throw new IllegalArgumentException();
-                }
+            if (subject[0].length() > 10 || subject[0].replaceAll(" ", "").isEmpty()) {
+                flag=false;
+                throw new IllegalArgumentException();
             }
-//        }catch(IllegalArgumentException e){
-//            //System.out.println(e.getMessage());
-//            flag=false;
-//        }
+            if (!subject[2].equals("A+") && !subject[2].equals("A0") && !subject[2].equals("B+") && !subject[2].equals("B0") && !subject[2].equals("C+") && !subject[2].equals("C0") && !subject[2].equals("D+") && !subject[2].equals("D0") && !subject[2].equals("F") && !subject[2].equals("P") && !subject[2].equals("NP")) {
+                flag=false;
+                throw new IllegalArgumentException();
+            }
+        }
+        for(String part:parts[1]) {
+            String[] subject = part.split("-");
+            if (!subject[1].equals("1") && !subject[1].equals("2") && !subject[1].equals("3") && !subject[1].equals("4")) {
+                flag=false;
+                throw new IllegalArgumentException();
+            }
+            if (subject[0].length() > 10 || subject[0].replaceAll(" ", "").isEmpty()) {
+                flag=false;
+                throw new IllegalArgumentException();
+            }
+            if (!subject[2].equals("A+") && !subject[2].equals("A0") && !subject[2].equals("B+") && !subject[2].equals("B0") && !subject[2].equals("C+") && !subject[2].equals("C0") && !subject[2].equals("D+") && !subject[2].equals("D0") && !subject[2].equals("F") && !subject[2].equals("P") && !subject[2].equals("NP")) {
+                flag=false;
+                throw new IllegalArgumentException();
+            }
+        }
         if(flag){
             for(int i=0;i<2;i++){
                 for(String part:parts[i]){
